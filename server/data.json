@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "car_name": "A4",
+        "brand": "Hyundai",
+        "price": 57406
+    },
+    {
+        "id": 2,
+        "car_name": "Model S",
+        "brand": "Ford",
+        "price": 31924
+    },
+    {
+        "id": 3,
+        "car_name": "Altima",
+        "brand": "Hyundai",
+        "price": 54167
+    },
+    {
+        "id": 4,
+        "car_name": "Golf",
+        "brand": "Nissan",
+        "price": 60180
+    },
+    {
+        "id": 5,
+        "car_name": "Civic",
+        "brand": "Nissan",
+        "price": 27284
+    },
+    {
+        "id": 6,
+        "car_name": "Mustang",
+        "brand": "BMW",
+        "price": 25740
+    },
+    {
+        "id": 7,
+        "car_name": "Elantra",
+        "brand": "Mercedes",
+        "price": 61555
+    },
+    {
+        "id": 8,
+        "car_name": "Golf",
+        "brand": "Toyota",
+        "price": 53239
+    },
+    {
+        "id": 9,
+        "car_name": "Sorento",
+        "brand": "Kia",
+        "price": 36865
+    },
+    {
+        "id": 10,
+        "car_name": "Corolla",
+        "brand": "Audi",
+        "price": 16418
+    },
+    {
+        "id": 11,
+        "car_name": "Golf",
+        "brand": "Ford",
+        "price": 46752
+    },
+    {
+        "id": 12,
+        "car_name": "Corolla",
+        "brand": "Nissan",
+        "price": 63883
+    },
+    {
+        "id": 13,
+        "car_name": "Sorento",
+        "brand": "Audi",
+        "price": 33158
+    },
+    {
+        "id": 14,
+        "car_name": "Altima",
+        "brand": "Nissan",
+        "price": 74339
+    },
+    {
+        "id": 15,
+        "car_name": "Elantra",
+        "brand": "Ford",
+        "price": 16265
+    },
+    {
+        "id": 16,
+        "car_name": "Civic",
+        "brand": "Honda",
+        "price": 42302
+    },
+    {
+        "id": 17,
+        "car_name": "Civic",
+        "brand": "BMW",
+        "price": 36711
+    },
+    {
+        "id": 18,
+        "car_name": "Corolla",
+        "brand": "Ford",
+        "price": 51115
+    },
+    {
+        "id": 19,
+        "car_name": "A4",
+        "brand": "BMW",
+        "price": 55607
+    },
+    {
+        "id": 20,
+        "car_name": "Corolla",
+        "brand": "Volkswagen",
+        "price": 59821
+    },
+    {
+        "id": 21,
+        "car_name": "Sorento",
+        "brand": "Hyundai",
+        "price": 53678
+    },
+    {
+        "id": 22,
+        "car_name": "Golf",
+        "brand": "Hyundai",
+        "price": 23209
+    },
+    {
+        "id": 23,
+        "car_name": "Altima",
+        "brand": "Volkswagen",
+        "price": 71201
+    },
+    {
+        "id": 24,
+        "car_name": "Corolla",
+        "brand": "Mercedes",
+        "price": 41179
+    },
+    {
+        "id": 25,
+        "car_name": "Altima",
+        "brand": "Hyundai",
+        "price": 36312
+    },
+    {
+        "id": 26,
+        "car_name": "Altima",
+        "brand": "Nissan",
+        "price": 18809
+    },
+    {
+        "id": 27,
+        "car_name": "Mustang",
+        "brand": "Ford",
+        "price": 54628
+    },
+    {
+        "id": 28,
+        "car_name": "X5",
+        "brand": "BMW",
+        "price": 43871
+    },
+    {
+        "id": 29,
+        "car_name": "Sorento",
+        "brand": "Toyota",
+        "price": 57635
+    },
+    {
+        "id": 30,
+        "car_name": "X5",
+        "brand": "BMW",
+        "price": 31704
+    },
+    {
+        "id": 31,
+        "car_name": "Elantra",
+        "brand": "Audi",
+        "price": 29511
+    },
+    {
+        "id": 32,
+        "car_name": "Altima",
+        "brand": "Audi",
+        "price": 56091
+    },
+    {
+        "id": 33,
+        "car_name": "Mustang",
+        "brand": "Kia",
+        "price": 36723
+    },
+    {
+        "id": 34,
+        "car_name": "Altima",
+        "brand": "Honda",
+        "price": 63095
+    },
+    {
+        "id": 35,
+        "car_name": "Corolla",
+        "brand": "Kia",
+        "price": 46190
+    },
+    {
+        "id": 36,
+        "car_name": "Elantra",
+        "brand": "Hyundai",
+        "price": 60363
+    },
+    {
+        "id": 37,
+        "car_name": "Sorento",
+        "brand": "Honda",
+        "price": 56910
+    },
+    {
+        "id": 38,
+        "car_name": "Elantra",
+        "brand": "Mercedes",
+        "price": 26011
+    },
+    {
+        "id": 39,
+        "car_name": "Sorento",
+        "brand": "Mercedes",
+        "price": 35378
+    },
+    {
+        "id": 40,
+        "car_name": "Altima",
+        "brand": "Hyundai",
+        "price": 57893
+    },
+    {
+        "id": 41,
+        "car_name": "A4",
+        "brand": "Kia",
+        "price": 51909
+    },
+    {
+        "id": 42,
+        "car_name": "A4",
+        "brand": "Volkswagen",
+        "price": 73093
+    },
+    {
+        "id": 43,
+        "car_name": "Altima",
+        "brand": "BMW",
+        "price": 58137
+    },
+    {
+        "id": 44,
+        "car_name": "Corolla",
+        "brand": "Ford",
+        "price": 41876
+    },
+    {
+        "id": 45,
+        "car_name": "Altima",
+        "brand": "Volkswagen",
+        "price": 78285
+    },
+    {
+        "id": 46,
+        "car_name": "X5",
+        "brand": "Mercedes",
+        "price": 11413
+    },
+    {
+        "id": 47,
+        "car_name": "X5",
+        "brand": "Volkswagen",
+        "price": 55058
+    },
+    {
+        "id": 48,
+        "car_name": "Corolla",
+        "brand": "Hyundai",
+        "price": 45416
+    },
+    {
+        "id": 49,
+        "car_name": "Altima",
+        "brand": "Toyota",
+        "price": 19001
+    },
+    {
+        "id": 50,
+        "car_name": "Mustang",
+        "brand": "Hyundai",
+        "price": 74790
+    }
+]
