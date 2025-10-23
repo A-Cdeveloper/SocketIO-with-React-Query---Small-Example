@@ -7,3 +7,14 @@ export type CarType = {
 
 export type CreateCarType = Omit<CarType, "id">;
 export type UpdateCarType = Partial<Omit<CarType, "id">> & { id: number };
+
+export type CarsResponse = {
+  cars: CarType[];
+  pagination: {
+    page: number;
+    limit: number;
+    total: number;
+    hasNext: boolean;
+    totalPages: number;
+  };
+};
