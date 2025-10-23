@@ -1,5 +1,5 @@
 import Header from "./components/layout/Header";
-import MainLayout from "./components/layout/MainLayout";
+import MainContent from "./components/layout/MainContent";
 import AllCars from "./features/cars/components/AllCars";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
       <Header />
 
-      <MainLayout>
+      <MainContent>
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Available Cars</h1>
           <p className="text-gray-600 dark:text-gray-400">
@@ -15,7 +15,7 @@ function App() {
           </p>
         </div>
         <AllCars />
-      </MainLayout>
+      </MainContent>
     </div>
   );
 }
