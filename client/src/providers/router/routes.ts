@@ -10,5 +10,10 @@ const navigationRoutes: RouteType[] = [
     label: "Home",
     name: "home",
   },
+  {
+    path: "/cars/:id",
+    label: "Cars",
+    name: "car",
+  },
 ];
 export default navigationRoutes;
