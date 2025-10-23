@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { AuthUser } from "@shared/types";
+import { AuthUserType } from "../../../shared/types";
 
 // Extend Express Request type to include user
 declare global {
   namespace Express {
     interface Request {
-      user?: AuthUser;
+      user?: AuthUserType;
     }
   }
 }
@@ -30,11 +30,11 @@ export const authenticateToken = (
       return res.status(403).json({ error: "Invalid or expired token" });
     }
 
-    req.user = user as AuthUser;
+    req.user = user as AuthUserType;
     next();
   });
 };
 
-export const generateToken = (user: AuthUser): string => {
+export const generateToken = (user: AuthUserType): string => {
   return jwt.sign(user, JWT_SECRET, { expiresIn: "24h" });
 };

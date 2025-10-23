@@ -1,15 +1,31 @@
 import { Router, Request, Response } from "express";
 import { DataManager } from "../utils/dataManager";
-import { CreateCar, UpdateCar } from "@shared/types";
+import { CreateCarType, UpdateCarType } from "../../../shared/types";
 import { authenticateToken } from "../middleware/auth";
 
 const router = Router();
 
-// GET /api/cars - Vrati sve automobile
+// GET /api/cars - Vrati sve automobile sa pagination
 router.get("/", async (req: Request, res: Response) => {
   try {
-    const cars = await DataManager.getAllCars();
-    res.json(cars);
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const offset = (page - 1) * limit;
+
+    const allCars = await DataManager.getAllCars();
+    const cars = allCars.slice(offset, offset + limit);
+    const hasNext = offset + limit < allCars.length;
+
+    res.json({
+      cars,
+      pagination: {
+        page,
+        limit,
+        total: allCars.length,
+        hasNext,
+        totalPages: Math.ceil(allCars.length / limit),
+      },
+    });
   } catch (error) {
     console.error("Error fetching cars:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -39,7 +55,7 @@ router.get("/:id", async (req: Request, res: Response) => {
 // POST /api/cars - Dodaj novi auto (AUTH REQUIRED)
 router.post("/", authenticateToken, async (req: Request, res: Response) => {
   try {
-    const carData: CreateCar = req.body;
+    const carData: CreateCarType = req.body;
 
     // Validacija
     if (
@@ -66,7 +82,7 @@ router.put("/:id", authenticateToken, async (req: Request, res: Response) => {
       return res.status(400).json({ error: "Invalid car ID" });
     }
 
-    const carData: UpdateCar = { id, ...req.body };
+    const carData: UpdateCarType = { id, ...req.body };
     const updatedCar = await DataManager.updateCar(id, carData);
 
     if (!updatedCar) {

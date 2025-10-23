@@ -1,11 +1,11 @@
-import { Car, CreateCar, UpdateCar } from "@shared/types";
+import { CarType, CreateCarType, UpdateCarType } from "../../../shared/types";
 import { promises as fs } from "fs";
 import path from "path";
 
 const DATA_FILE = path.join(__dirname, "../../data.json");
 
 export class DataManager {
-  private static async readData(): Promise<Car[]> {
+  private static async readData(): Promise<CarType[]> {
     try {
       const data = await fs.readFile(DATA_FILE, "utf-8");
       return JSON.parse(data);
@@ -15,7 +15,7 @@ export class DataManager {
     }
   }
 
-  private static async writeData(cars: Car[]): Promise<void> {
+  private static async writeData(cars: CarType[]): Promise<void> {
     try {
       await fs.writeFile(DATA_FILE, JSON.stringify(cars, null, 2));
     } catch (error) {
@@ -24,25 +24,28 @@ export class DataManager {
     }
   }
 
-  static async getAllCars(): Promise<Car[]> {
+  static async getAllCars(): Promise<CarType[]> {
     return this.readData();
   }
 
-  static async getCarById(id: number): Promise<Car | null> {
+  static async getCarById(id: number): Promise<CarType | null> {
     const cars = await this.readData();
     return cars.find((car) => car.id === id) || null;
   }
 
-  static async createCar(carData: CreateCar): Promise<Car> {
+  static async createCar(carData: CreateCarType): Promise<CarType> {
     const cars = await this.readData();
     const newId = Math.max(...cars.map((c) => c.id), 0) + 1;
-    const newCar: Car = { id: newId, ...carData };
+    const newCar: CarType = { id: newId, ...carData };
     cars.push(newCar);
     await this.writeData(cars);
     return newCar;
   }
 
-  static async updateCar(id: number, carData: UpdateCar): Promise<Car | null> {
+  static async updateCar(
+    id: number,
+    carData: UpdateCarType
+  ): Promise<CarType | null> {
     const cars = await this.readData();
     const carIndex = cars.findIndex((car) => car.id === id);
 

@@ -2,14 +2,14 @@ import { Router, Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import { promises as fs } from "fs";
 import path from "path";
-import { User, LoginRequest, AuthResponse } from "@shared/types";
+import { UserType, LoginRequest, AuthResponse } from "../../../shared/types";
 import { generateToken } from "../middleware/auth";
 
 const router = Router();
 const USERS_FILE = path.join(__dirname, "../../users.json");
 
 // Helper functions
-const readUsers = async (): Promise<User[]> => {
+const readUsers = async (): Promise<UserType[]> => {
   try {
     const data = await fs.readFile(USERS_FILE, "utf-8");
     return JSON.parse(data);
