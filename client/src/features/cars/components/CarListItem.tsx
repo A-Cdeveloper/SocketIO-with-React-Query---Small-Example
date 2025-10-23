@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const CarListItem = ({ car }: { car: CarType }) => {
   return (
     <Link
-      to={navigationRoutes[1].path.replace(":id", car.id.toString())}
+      to={navigationRoutes.car.path.replace(":id", car.id.toString())}
       aria-label={`View ${car.car_name}`}
     >
       <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-750 transition-all duration-200">

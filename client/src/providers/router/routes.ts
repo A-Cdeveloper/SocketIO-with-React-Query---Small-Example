@@ -4,16 +4,17 @@ type RouteType = {
   name: string;
 };
 
-const navigationRoutes: RouteType[] = [
-  {
+const navigationRoutes: Record<string, RouteType> = {
+  home: {
     path: "/",
     label: "Home",
     name: "home",
   },
-  {
+  car: {
     path: "/cars/:id",
     label: "Cars",
     name: "car",
   },
-];
+};
+
 export default navigationRoutes;

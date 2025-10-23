@@ -9,11 +9,11 @@ export const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: navigationRoutes[0].path,
+        path: navigationRoutes.home.path,
         element: <HomePage />,
       },
       {
-        path: navigationRoutes[1].path,
+        path: navigationRoutes.car.path,
         element: <SingleCarPage />,
       },
     ],
