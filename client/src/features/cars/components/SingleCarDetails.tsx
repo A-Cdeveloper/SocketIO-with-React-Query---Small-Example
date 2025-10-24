@@ -21,6 +21,7 @@ const SingleCarDetails = () => {
       <p className="text-gray-600 dark:text-gray-400 mb-6">
         {priceFormat(car.price)}
       </p>
+      <p className="text-gray-600 dark:text-gray-400 mb-6">{car.description}</p>
     </div>
   );
 };
