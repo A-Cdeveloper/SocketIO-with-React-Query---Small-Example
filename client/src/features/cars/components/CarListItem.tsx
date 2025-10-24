@@ -1,3 +1,4 @@
+import { priceFormat } from "@/lib/utils";
 import navigationRoutes from "@/providers/router/routes";
 import type { CarType } from "@shared/types";
 import { Link } from "react-router";
@@ -16,7 +17,7 @@ const CarListItem = ({ car }: { car: CarType }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-primary">
-              ${car.price.toLocaleString()}
+              {priceFormat(car.price)}
             </span>
           </div>
         </div>
