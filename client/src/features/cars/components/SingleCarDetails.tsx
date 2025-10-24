@@ -9,8 +9,6 @@ const SingleCarDetails = () => {
   const { id } = useParams();
   const { car, isPending, error } = useCar(Number(id));
 
-  console.log(car);
-
   if (isPending) return <Spinner />;
   if (error) return <ErrorResults message={error.message} />;
   if (!car) return <EmptyResults type="cars" message="Try again later" />;

@@ -3,6 +3,7 @@ export type CarType = {
   car_name: string;
   brand: string;
   price: number;
+  description: string;
 };
 
 export type CreateCarType = Omit<CarType, "id">;
