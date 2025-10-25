@@ -16,6 +16,10 @@ export const router = createBrowserRouter([
         path: navigationRoutes.car.path,
         element: <SingleCarPage />,
       },
+      {
+        path: navigationRoutes.addCar.path,
+        element: <h1>Add Car</h1>,
+      },
     ],
   },
 ]);

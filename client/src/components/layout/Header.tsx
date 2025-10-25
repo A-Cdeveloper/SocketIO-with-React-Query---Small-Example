@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import UserArea from "./UserArea";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
@@ -7,6 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Logo />
+          <Navigation />
           <UserArea />
         </div>
       </div>
