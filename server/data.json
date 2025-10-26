@@ -1,352 +1,373 @@
 [
-    {
-        "id": 1,
-        "car_name": "A4",
-        "brand": "Hyundai",
-        "price": 57406,
-        "description": "Premium sedan with advanced safety features and luxurious interior design."
-    },
-    {
-        "id": 2,
-        "car_name": "Model S",
-        "brand": "Ford",
-        "price": 31924,
-        "description": "Electric vehicle with cutting-edge technology and impressive range capabilities."
-    },
-    {
-        "id": 3,
-        "car_name": "Altima",
-        "brand": "Hyundai",
-        "price": 54167,
-        "description": "Reliable family car with excellent fuel efficiency and comfortable seating."
-    },
-    {
-        "id": 4,
-        "car_name": "Golf",
-        "brand": "Nissan",
-        "price": 60180,
-        "description": "Compact hatchback perfect for city driving with agile handling and modern features."
-    },
-    {
-        "id": 5,
-        "car_name": "Civic",
-        "brand": "Nissan",
-        "price": 27284,
-        "description": "Sporty compact car with responsive engine and sleek aerodynamic design."
-    },
-    {
-        "id": 6,
-        "car_name": "Mustang",
-        "brand": "BMW",
-        "price": 25740,
-        "description": "Iconic muscle car with powerful performance and classic American styling."
-    },
-    {
-        "id": 7,
-        "car_name": "Elantra",
-        "brand": "Mercedes",
-        "price": 61555,
-        "description": "Elegant sedan combining luxury with practicality and advanced driver assistance."
-    },
-    {
-        "id": 8,
-        "car_name": "Golf",
-        "brand": "Toyota",
-        "price": 53239,
-        "description": "Versatile hatchback with spacious cargo area and reliable Japanese engineering."
-    },
-    {
-        "id": 9,
-        "car_name": "Sorento",
-        "brand": "Kia",
-        "price": 36865,
-        "description": "Mid-size SUV with three-row seating and excellent value for money."
-    },
-    {
-        "id": 10,
-        "car_name": "Corolla",
-        "brand": "Audi",
-        "price": 16418,
-        "description": "Compact car with premium German engineering and sophisticated technology."
-    },
-    {
-        "id": 11,
-        "car_name": "Golf",
-        "brand": "Ford",
-        "price": 46752,
-        "description": "American-made hatchback with robust build quality and efficient performance."
-    },
-    {
-        "id": 12,
-        "car_name": "Corolla",
-        "brand": "Nissan",
-        "price": 63883,
-        "description": "Reliable Japanese sedan with proven track record and low maintenance costs."
-    },
-    {
-        "id": 13,
-        "car_name": "Sorento",
-        "brand": "Audi",
-        "price": 33158,
-        "description": "Luxury SUV with premium amenities and advanced quattro all-wheel drive system."
-    },
-    {
-        "id": 14,
-        "car_name": "Altima",
-        "brand": "Nissan",
-        "price": 74339,
-        "description": "Top-tier sedan with innovative ProPILOT assist and premium interior materials."
-    },
-    {
-        "id": 15,
-        "car_name": "Elantra",
-        "brand": "Ford",
-        "price": 16265,
-        "description": "American compact car with modern design and efficient turbocharged engine."
-    },
-    {
-        "id": 16,
-        "car_name": "Civic",
-        "brand": "Honda",
-        "price": 42302,
-        "description": "Legendary Honda reliability with sporty performance and excellent resale value."
-    },
-    {
-        "id": 17,
-        "car_name": "Civic",
-        "brand": "BMW",
-        "price": 36711,
-        "description": "German-engineered compact with precision handling and premium build quality."
-    },
-    {
-        "id": 18,
-        "car_name": "Corolla",
-        "brand": "Ford",
-        "price": 51115,
-        "description": "American sedan with spacious interior and advanced SYNC infotainment system."
-    },
-    {
-        "id": 19,
-        "car_name": "A4",
-        "brand": "BMW",
-        "price": 55607,
-        "description": "German luxury sedan with dynamic driving experience and cutting-edge technology."
-    },
-    {
-        "id": 20,
-        "car_name": "Corolla",
-        "brand": "Volkswagen",
-        "price": 59821,
-        "description": "European compact car with refined engineering and sophisticated design language."
-    },
-    {
-        "id": 21,
-        "car_name": "Sorento",
-        "brand": "Hyundai",
-        "price": 53678,
-        "description": "Korean SUV with comprehensive warranty coverage and modern safety features."
-    },
-    {
-        "id": 22,
-        "car_name": "Golf",
-        "brand": "Hyundai",
-        "price": 23209,
-        "description": "Korean hatchback with excellent value proposition and reliable performance."
-    },
-    {
-        "id": 23,
-        "car_name": "Altima",
-        "brand": "Volkswagen",
-        "price": 71201,
-        "description": "German sedan with premium interior and advanced driver assistance systems."
-    },
-    {
-        "id": 24,
-        "car_name": "Corolla",
-        "brand": "Mercedes",
-        "price": 41179,
-        "description": "Mercedes-Benz compact with luxury features and sophisticated engineering."
-    },
-    {
-        "id": 25,
-        "car_name": "Altima",
-        "brand": "Hyundai",
-        "price": 36312,
-        "description": "Korean sedan with modern styling and comprehensive safety technology."
-    },
-    {
-        "id": 26,
-        "car_name": "Altima",
-        "brand": "Nissan",
-        "price": 18809,
-        "description": "Entry-level Nissan sedan with reliable performance and practical features."
-    },
-    {
-        "id": 27,
-        "car_name": "Mustang",
-        "brand": "Ford",
-        "price": 54628,
-        "description": "Classic American muscle car with V8 power and iconic design heritage."
-    },
-    {
-        "id": 28,
-        "car_name": "X5",
-        "brand": "BMW",
-        "price": 43871,
-        "description": "Premium German SUV with xDrive all-wheel drive and luxury appointments."
-    },
-    {
-        "id": 29,
-        "car_name": "Sorento",
-        "brand": "Toyota",
-        "price": 57635,
-        "description": "Japanese SUV with legendary reliability and advanced hybrid technology."
-    },
-    {
-        "id": 30,
-        "car_name": "X5",
-        "brand": "BMW",
-        "price": 31704,
-        "description": "Sporty German SUV with dynamic handling and premium interior craftsmanship."
-    },
-    {
-        "id": 31,
-        "car_name": "Elantra",
-        "brand": "Audi",
-        "price": 29511,
-        "description": "German compact with quattro all-wheel drive and sophisticated technology."
-    },
-    {
-        "id": 32,
-        "car_name": "Altima",
-        "brand": "Audi",
-        "price": 56091,
-        "description": "Audi sedan with premium quattro system and luxury interior design."
-    },
-    {
-        "id": 33,
-        "car_name": "Mustang",
-        "brand": "Kia",
-        "price": 36723,
-        "description": "Korean sports car with aggressive styling and powerful performance."
-    },
-    {
-        "id": 34,
-        "car_name": "Altima",
-        "brand": "Honda",
-        "price": 63095,
-        "description": "Honda sedan with VTEC engine technology and excellent fuel efficiency."
-    },
-    {
-        "id": 35,
-        "car_name": "Corolla",
-        "brand": "Kia",
-        "price": 46190,
-        "description": "Korean compact with modern design and comprehensive warranty coverage."
-    },
-    {
-        "id": 36,
-        "car_name": "Elantra",
-        "brand": "Hyundai",
-        "price": 60363,
-        "description": "Korean sedan with bold design language and advanced safety features."
-    },
-    {
-        "id": 37,
-        "car_name": "Sorento",
-        "brand": "Honda",
-        "price": 56910,
-        "description": "Japanese SUV with Honda reliability and advanced hybrid powertrain."
-    },
-    {
-        "id": 38,
-        "car_name": "Elantra",
-        "brand": "Mercedes",
-        "price": 26011,
-        "description": "Mercedes-Benz compact with luxury features and sophisticated engineering."
-    },
-    {
-        "id": 39,
-        "car_name": "Sorento",
-        "brand": "Mercedes",
-        "price": 35378,
-        "description": "German luxury SUV with premium amenities and advanced safety systems."
-    },
-    {
-        "id": 40,
-        "car_name": "Altima",
-        "brand": "Hyundai",
-        "price": 57893,
-        "description": "Korean sedan with modern technology and comprehensive warranty protection."
-    },
-    {
-        "id": 41,
-        "car_name": "A4",
-        "brand": "Kia",
-        "price": 51909,
-        "description": "Korean luxury sedan with premium features and excellent value proposition."
-    },
-    {
-        "id": 42,
-        "car_name": "A4",
-        "brand": "Volkswagen",
-        "price": 73093,
-        "description": "German luxury sedan with sophisticated engineering and premium materials."
-    },
-    {
-        "id": 43,
-        "car_name": "Altima",
-        "brand": "BMW",
-        "price": 58137,
-        "description": "German sedan with BMW's signature driving dynamics and luxury features."
-    },
-    {
-        "id": 44,
-        "car_name": "Corolla",
-        "brand": "Ford",
-        "price": 41876,
-        "description": "American compact with Ford's SYNC technology and reliable performance."
-    },
-    {
-        "id": 45,
-        "car_name": "Altima",
-        "brand": "Volkswagen",
-        "price": 78285,
-        "description": "German sedan with premium interior and advanced driver assistance features."
-    },
-    {
-        "id": 46,
-        "car_name": "X5",
-        "brand": "Mercedes",
-        "price": 11413,
-        "description": "Mercedes-Benz luxury SUV with premium amenities and advanced technology."
-    },
-    {
-        "id": 47,
-        "car_name": "X5",
-        "brand": "Volkswagen",
-        "price": 55058,
-        "description": "German SUV with Volkswagen's engineering excellence and premium features."
-    },
-    {
-        "id": 48,
-        "car_name": "Corolla",
-        "brand": "Hyundai",
-        "price": 45416,
-        "description": "Korean compact with modern design and comprehensive warranty coverage."
-    },
-    {
-        "id": 49,
-        "car_name": "Altima",
-        "brand": "Toyota",
-        "price": 19001,
-        "description": "Japanese sedan with Toyota's legendary reliability and efficient performance."
-    },
-    {
-        "id": 50,
-        "car_name": "Mustang",
-        "brand": "Hyundai",
-        "price": 74790,
-        "description": "Korean sports car with aggressive styling and powerful turbocharged engine."
-    }
+  {
+    "id": 1,
+    "car_name": "A4",
+    "brand": "Hyundai",
+    "price": 57406,
+    "description": "Premium sedan with advanced safety features and luxurious interior design."
+  },
+  {
+    "id": 2,
+    "car_name": "Model S",
+    "brand": "Ford",
+    "price": 31924,
+    "description": "Electric vehicle with cutting-edge technology and impressive range capabilities."
+  },
+  {
+    "id": 3,
+    "car_name": "Altima",
+    "brand": "Hyundai",
+    "price": 54167,
+    "description": "Reliable family car with excellent fuel efficiency and comfortable seating."
+  },
+  {
+    "id": 4,
+    "car_name": "Golf",
+    "brand": "Nissan",
+    "price": 60180,
+    "description": "Compact hatchback perfect for city driving with agile handling and modern features."
+  },
+  {
+    "id": 5,
+    "car_name": "Civic",
+    "brand": "Nissan",
+    "price": 27284,
+    "description": "Sporty compact car with responsive engine and sleek aerodynamic design."
+  },
+  {
+    "id": 6,
+    "car_name": "Mustang",
+    "brand": "BMW",
+    "price": 25740,
+    "description": "Iconic muscle car with powerful performance and classic American styling."
+  },
+  {
+    "id": 7,
+    "car_name": "Elantra",
+    "brand": "Mercedes",
+    "price": 61555,
+    "description": "Elegant sedan combining luxury with practicality and advanced driver assistance."
+  },
+  {
+    "id": 8,
+    "car_name": "Golf",
+    "brand": "Toyota",
+    "price": 53239,
+    "description": "Versatile hatchback with spacious cargo area and reliable Japanese engineering."
+  },
+  {
+    "id": 9,
+    "car_name": "Sorento",
+    "brand": "Kia",
+    "price": 36865,
+    "description": "Mid-size SUV with three-row seating and excellent value for money."
+  },
+  {
+    "id": 10,
+    "car_name": "Corolla",
+    "brand": "Audi",
+    "price": 16418,
+    "description": "Compact car with premium German engineering and sophisticated technology."
+  },
+  {
+    "id": 11,
+    "car_name": "Golf",
+    "brand": "Ford",
+    "price": 46752,
+    "description": "American-made hatchback with robust build quality and efficient performance."
+  },
+  {
+    "id": 12,
+    "car_name": "Corolla",
+    "brand": "Nissan",
+    "price": 63883,
+    "description": "Reliable Japanese sedan with proven track record and low maintenance costs."
+  },
+  {
+    "id": 13,
+    "car_name": "Sorento",
+    "brand": "Audi",
+    "price": 33158,
+    "description": "Luxury SUV with premium amenities and advanced quattro all-wheel drive system."
+  },
+  {
+    "id": 14,
+    "car_name": "Altima",
+    "brand": "Nissan",
+    "price": 74339,
+    "description": "Top-tier sedan with innovative ProPILOT assist and premium interior materials."
+  },
+  {
+    "id": 15,
+    "car_name": "Elantra",
+    "brand": "Ford",
+    "price": 16265,
+    "description": "American compact car with modern design and efficient turbocharged engine."
+  },
+  {
+    "id": 16,
+    "car_name": "Civic",
+    "brand": "Honda",
+    "price": 42302,
+    "description": "Legendary Honda reliability with sporty performance and excellent resale value."
+  },
+  {
+    "id": 17,
+    "car_name": "Civic",
+    "brand": "BMW",
+    "price": 36711,
+    "description": "German-engineered compact with precision handling and premium build quality."
+  },
+  {
+    "id": 18,
+    "car_name": "Corolla",
+    "brand": "Ford",
+    "price": 51115,
+    "description": "American sedan with spacious interior and advanced SYNC infotainment system."
+  },
+  {
+    "id": 19,
+    "car_name": "A4",
+    "brand": "BMW",
+    "price": 55607,
+    "description": "German luxury sedan with dynamic driving experience and cutting-edge technology."
+  },
+  {
+    "id": 20,
+    "car_name": "Corolla",
+    "brand": "Volkswagen",
+    "price": 59821,
+    "description": "European compact car with refined engineering and sophisticated design language."
+  },
+  {
+    "id": 21,
+    "car_name": "Sorento",
+    "brand": "Hyundai",
+    "price": 53678,
+    "description": "Korean SUV with comprehensive warranty coverage and modern safety features."
+  },
+  {
+    "id": 22,
+    "car_name": "Golf",
+    "brand": "Hyundai",
+    "price": 23209,
+    "description": "Korean hatchback with excellent value proposition and reliable performance."
+  },
+  {
+    "id": 23,
+    "car_name": "Altima",
+    "brand": "Volkswagen",
+    "price": 71201,
+    "description": "German sedan with premium interior and advanced driver assistance systems."
+  },
+  {
+    "id": 24,
+    "car_name": "Corolla",
+    "brand": "Mercedes",
+    "price": 41179,
+    "description": "Mercedes-Benz compact with luxury features and sophisticated engineering."
+  },
+  {
+    "id": 25,
+    "car_name": "Altima",
+    "brand": "Hyundai",
+    "price": 36312,
+    "description": "Korean sedan with modern styling and comprehensive safety technology."
+  },
+  {
+    "id": 26,
+    "car_name": "Altima",
+    "brand": "Nissan",
+    "price": 18809,
+    "description": "Entry-level Nissan sedan with reliable performance and practical features."
+  },
+  {
+    "id": 27,
+    "car_name": "Mustang",
+    "brand": "Ford",
+    "price": 54628,
+    "description": "Classic American muscle car with V8 power and iconic design heritage."
+  },
+  {
+    "id": 28,
+    "car_name": "X5",
+    "brand": "BMW",
+    "price": 43871,
+    "description": "Premium German SUV with xDrive all-wheel drive and luxury appointments."
+  },
+  {
+    "id": 29,
+    "car_name": "Sorento",
+    "brand": "Toyota",
+    "price": 57635,
+    "description": "Japanese SUV with legendary reliability and advanced hybrid technology."
+  },
+  {
+    "id": 30,
+    "car_name": "X5",
+    "brand": "BMW",
+    "price": 31704,
+    "description": "Sporty German SUV with dynamic handling and premium interior craftsmanship."
+  },
+  {
+    "id": 31,
+    "car_name": "Elantra",
+    "brand": "Audi",
+    "price": 29511,
+    "description": "German compact with quattro all-wheel drive and sophisticated technology."
+  },
+  {
+    "id": 32,
+    "car_name": "Altima",
+    "brand": "Audi",
+    "price": 56091,
+    "description": "Audi sedan with premium quattro system and luxury interior design."
+  },
+  {
+    "id": 33,
+    "car_name": "Mustang",
+    "brand": "Kia",
+    "price": 36723,
+    "description": "Korean sports car with aggressive styling and powerful performance."
+  },
+  {
+    "id": 34,
+    "car_name": "Altima",
+    "brand": "Honda",
+    "price": 63095,
+    "description": "Honda sedan with VTEC engine technology and excellent fuel efficiency."
+  },
+  {
+    "id": 35,
+    "car_name": "Corolla",
+    "brand": "Kia",
+    "price": 46190,
+    "description": "Korean compact with modern design and comprehensive warranty coverage."
+  },
+  {
+    "id": 36,
+    "car_name": "Elantra",
+    "brand": "Hyundai",
+    "price": 60363,
+    "description": "Korean sedan with bold design language and advanced safety features."
+  },
+  {
+    "id": 37,
+    "car_name": "Sorento",
+    "brand": "Honda",
+    "price": 56910,
+    "description": "Japanese SUV with Honda reliability and advanced hybrid powertrain."
+  },
+  {
+    "id": 38,
+    "car_name": "Elantra",
+    "brand": "Mercedes",
+    "price": 26011,
+    "description": "Mercedes-Benz compact with luxury features and sophisticated engineering."
+  },
+  {
+    "id": 39,
+    "car_name": "Sorento",
+    "brand": "Mercedes",
+    "price": 35378,
+    "description": "German luxury SUV with premium amenities and advanced safety systems."
+  },
+  {
+    "id": 40,
+    "car_name": "Altima",
+    "brand": "Hyundai",
+    "price": 57893,
+    "description": "Korean sedan with modern technology and comprehensive warranty protection."
+  },
+  {
+    "id": 41,
+    "car_name": "A4",
+    "brand": "Kia",
+    "price": 51909,
+    "description": "Korean luxury sedan with premium features and excellent value proposition."
+  },
+  {
+    "id": 42,
+    "car_name": "A4",
+    "brand": "Volkswagen",
+    "price": 73093,
+    "description": "German luxury sedan with sophisticated engineering and premium materials."
+  },
+  {
+    "id": 43,
+    "car_name": "Altima",
+    "brand": "BMW",
+    "price": 58137,
+    "description": "German sedan with BMW's signature driving dynamics and luxury features."
+  },
+  {
+    "id": 44,
+    "car_name": "Corolla",
+    "brand": "Ford",
+    "price": 41876,
+    "description": "American compact with Ford's SYNC technology and reliable performance."
+  },
+  {
+    "id": 45,
+    "car_name": "Altima",
+    "brand": "Volkswagen",
+    "price": 78285,
+    "description": "German sedan with premium interior and advanced driver assistance features."
+  },
+  {
+    "id": 46,
+    "car_name": "X5",
+    "brand": "Mercedes",
+    "price": 11413,
+    "description": "Mercedes-Benz luxury SUV with premium amenities and advanced technology."
+  },
+  {
+    "id": 47,
+    "car_name": "X5",
+    "brand": "Volkswagen",
+    "price": 55058,
+    "description": "German SUV with Volkswagen's engineering excellence and premium features."
+  },
+  {
+    "id": 48,
+    "car_name": "Corolla",
+    "brand": "Hyundai",
+    "price": 45416,
+    "description": "Korean compact with modern design and comprehensive warranty coverage."
+  },
+  {
+    "id": 49,
+    "car_name": "Altima",
+    "brand": "Toyota",
+    "price": 19001,
+    "description": "Japanese sedan with Toyota's legendary reliability and efficient performance."
+  },
+  {
+    "id": 50,
+    "car_name": "Mustang",
+    "brand": "Hyundai",
+    "price": 74790,
+    "description": "Korean sports car with aggressive styling and powerful turbocharged engine."
+  },
+  {
+    "id": 51,
+    "car_name": "UP",
+    "brand": "WV",
+    "price": 4322,
+    "description": "ecomomic car"
+  },
+  {
+    "id": 52,
+    "car_name": "UP",
+    "brand": "WV",
+    "price": 2300,
+    "description": "ecomomic car"
+  },
+  {
+    "id": 53,
+    "car_name": "UP",
+    "brand": "WV",
+    "price": 3400,
+    "description": "ecomomic car for family"
+  }
 ]
