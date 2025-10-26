@@ -12,9 +12,11 @@ const LinkNav = ({
   const isActive = useMatch(to);
 
   const linkClasses = cn(
-    "text-white hover:text-primary",
+    "dark:text-white text-black hover:text-primary",
     "text-md font-medium",
-    isActive ? "text-primary" : "text-white hover:text-primary"
+    isActive
+      ? "text-primary dark:text-primary"
+      : "dark:text-white text-black hover:text-primary"
   );
   return (
     <Link to={to} className={linkClasses}>

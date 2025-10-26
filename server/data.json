@@ -348,19 +348,5 @@
     "brand": "Hyundai",
     "price": 74790,
     "description": "Korean sports car with aggressive styling and powerful turbocharged engine."
-  },
-  {
-    "id": 51,
-    "car_name": "UP",
-    "brand": "WV",
-    "price": 4322,
-    "description": "ecomomic car"
-  },
-  {
-    "id": 52,
-    "car_name": "UP",
-    "brand": "WV",
-    "price": 2300,
-    "description": "ecomomic car"
   }
 ]

@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import InputError from "./InputError";
 
 type CustomInputProps = React.ComponentProps<"input"> & {
-  label: string;
-  type?: "text" | "password" | "number";
+  label?: string;
+  type?: "text" | "password" | "number" | "email";
   error?: string;
   required?: boolean;
   className?: string;
@@ -25,10 +25,12 @@ function CustomInput({
 
   return (
     <div className={cn("space-y-2", className)}>
-      <Label htmlFor={inputId} className="mb-2 text-foreground/50">
-        {label}
-        {required && <span className="text-destructive -ml-[5px]">*</span>}
-      </Label>
+      {label && (
+        <Label htmlFor={inputId} className="mb-2 text-foreground/50">
+          {label}
+          {required && <span className="text-destructive -ml-[5px]">*</span>}
+        </Label>
+      )}
       <Input
         {...props}
         id={inputId}

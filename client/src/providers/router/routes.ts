@@ -25,6 +25,11 @@ const navigationRoutes: Record<string, RouteType> = {
     label: "Edit Car",
     name: "editCar",
   },
+  login: {
+    path: "/login",
+    label: "Login",
+    name: "login",
+  },
 };
 
 export default navigationRoutes;
