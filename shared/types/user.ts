@@ -3,16 +3,18 @@ export type UserType = {
   username: string;
   email: string;
   password: string; // hashed
+  refreshToken: string | null;
   createdAt: string;
 };
 
 export type CreateUserType = Omit<UserType, "id" | "createdAt">;
 export type LoginUserType = Pick<UserType, "email" | "password">;
-export type AuthUserType = Omit<UserType, "password">;
+export type AuthUserType = Omit<UserType, "password" | "refreshToken">;
 
 export type AuthResponse = {
   user: AuthUserType | null;
   token: string;
+  refreshToken: string;
 };
 
 export type LoginRequest = {

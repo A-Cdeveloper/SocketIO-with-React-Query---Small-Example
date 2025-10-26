@@ -12,6 +12,7 @@ declare global {
 }
 
 const JWT_SECRET = process.env.JWT_SECRET || "";
+const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || JWT_SECRET + "";
 
 export const authenticateToken = (
   req: Request,
@@ -36,5 +37,9 @@ export const authenticateToken = (
 };
 
 export const generateToken = (user: AuthUserType): string => {
-  return jwt.sign(user, JWT_SECRET, { expiresIn: "24h" });
+  return jwt.sign(user, JWT_SECRET, { expiresIn: "15m" });
+};
+
+export const generateRefreshToken = (user: AuthUserType): string => {
+  return jwt.sign(user, JWT_REFRESH_SECRET, { expiresIn: "7d" });
 };
