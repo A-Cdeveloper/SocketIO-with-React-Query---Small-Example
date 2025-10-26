@@ -54,3 +54,12 @@ export const editCar = async (
   }
   return data;
 };
+
+export const deleteCar = async (id: number): Promise<void> => {
+  const response = await fetch(`${env.VITE_REST_API_URL}/cars/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error("Failed to delete car");
+  }
+};
