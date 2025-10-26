@@ -5,11 +5,18 @@ A full-stack application demonstrating real-time communication using Socket.IO w
 ## 🚀 Features
 
 - **REST API** with Express.js and TypeScript
-- **JWT Authentication** for secure endpoints
-- **Real-time updates** with Socket.IO (coming soon)
-- **React Query** for efficient data fetching
+- **JWT Authentication** with refresh token support for secure endpoints
+- **Auto-refresh token** mechanism for seamless authentication
+- **React Query** with infinite scroll pagination for efficient data fetching
+- **React Hook Form** with Zod validation for forms
 - **Shared TypeScript types** between client and server
-- **CRUD operations** for car management
+- **Complete CRUD operations** for car management
+- **Dark mode** support with Tailwind CSS
+- **Responsive design** with modern UI components
+- **React Router** for client-side navigation
+- **Zustand** for state management with persistence
+- **Error boundaries** for graceful error handling
+- **Custom hooks** for infinite scroll and theme management
 
 ## 📁 Project Structure
 
@@ -17,22 +24,33 @@ A full-stack application demonstrating real-time communication using Socket.IO w
 SocketIO-with-React-Query-Small-Example/
 ├── client/                 # React + Vite frontend
 │   ├── src/
-│   │   ├── components/     # UI components
-│   │   ├── providers/      # React Query setup
-│   │   └── ...
+│   │   ├── components/     # Reusable UI components
+│   │   │   ├── customComponents/  # Custom form components
+│   │   │   ├── layout/            # Layout components (Header, Nav, etc.)
+│   │   │   └── ui/                # shadcn/ui components
+│   │   ├── features/       # Feature-based architecture
+│   │   │   ├── auth/       # Authentication feature
+│   │   │   └── cars/       # Cars feature (CRUD)
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── lib/            # Utilities (apiClient, env, utils)
+│   │   ├── pages/          # Page components
+│   │   ├── providers/      # React Query & Router setup
+│   │   └── store/          # Zustand state management
+│   └── package.json
 ├── server/                 # Node.js + Express backend
 │   ├── src/
-│   │   ├── routes/        # API routes
+│   │   ├── routes/         # API routes (auth, cars)
 │   │   ├── middleware/     # Auth middleware
-│   │   ├── utils/         # Data management
-│   │   └── ...
-│   ├── data.json          # Cars data
-│   └── users.json         # Users data
+│   │   └── server.ts       # Main server file
+│   ├── data.json           # Cars data (50 cars)
+│   ├── users.json          # User authentication data
+│   ├── .env                # Environment variables
+│   └── package.json
 ├── shared/                 # Shared TypeScript types
 │   └── types/
-│       ├── car.ts
-│       ├── user.ts
-│       └── index.ts
+│       ├── car.ts          # Car-related types
+│       ├── user.ts         # User/auth types
+│       └── index.ts        # Exports
 └── README.md
 ```
 
@@ -42,19 +60,24 @@ SocketIO-with-React-Query-Small-Example/
 
 - **Node.js** + **Express.js**
 - **TypeScript**
-- **JWT** authentication
+- **JWT** authentication with refresh tokens
 - **bcryptjs** for password hashing
+- **dotenv** for environment variables (dev & prod support)
 - **Socket.IO** (coming soon)
-- **dotenv** for environment variables
 
 ### Frontend
 
-- **React** + **Vite**
+- **React 19** + **Vite**
 - **TypeScript**
-- **TanStack Query** (React Query)
-- **Tailwind CSS**
-- **shadcn/ui** components
-- **Socket.IO Client** (coming soon)
+- **TanStack Query** (React Query) v5 - infinite queries
+- **React Hook Form** with Zod validation
+- **React Router DOM** v7 for client-side routing
+- **Zustand** with persist middleware for state management
+- **Tailwind CSS** with dark mode support
+- **shadcn/ui** - modern component library
+- **Lucide React** for icons
+- **next-themes** for theme switching
+- **Sonner** for toast notifications
 
 ## 🚀 Getting Started
 
@@ -85,11 +108,12 @@ Create `server/.env` file:
 
 ### Authentication
 
-- `POST /api/auth/login` - User login
+- `POST /api/auth/login` - User login (returns access & refresh tokens)
+- `POST /api/auth/refresh` - Refresh access token
 
 ### Cars (Public)
 
-- `GET /api/cars` - Get all cars
+- `GET /api/cars` - Get all cars with pagination (query: page, limit)
 - `GET /api/cars/:id` - Get car by ID
 
 ### Cars (Protected - requires JWT token)
@@ -100,10 +124,18 @@ Create `server/.env` file:
 
 ## 🔐 Authentication
 
+### JWT Token System
+
+- **Access Token**: 15 minutes expiration, used for API calls
+- **Refresh Token**: 7 days expiration, used to get new access tokens
+- **Auto-refresh**: Automatically refreshes access token on 403 errors
+
 ### Test Users
 
-- **Admin:** `admin@example.com` / `password`
+- **Admin:** `aleksandar@e-seo.info` / `password`
 - **User:** `user@example.com` / `password`
+
+Both users have the password: `password`
 
 ### Using the API
 
@@ -111,33 +143,56 @@ Create `server/.env` file:
 # Login
 curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@example.com","password":"password"}'
+  -d '{"email":"aleksandar@e-seo.info","password":"password"}'
 
-# Use token in protected endpoints
+# Response: { "user": {...}, "token": "access_token", "refreshToken": "refresh_token" }
+
+# Use access token in protected endpoints
 curl -X POST http://localhost:3001/api/cars \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -d '{"car_name":"Tesla Model S","brand":"Tesla","price":80000}'
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -d '{"car_name":"Tesla Model S","brand":"Tesla","price":80000,"description":"Electric luxury sedan"}'
+
+# Refresh access token when expired
+curl -X POST http://localhost:3001/api/auth/refresh \
+  -H "Content-Type: application/json" \
+  -d '{"refreshToken":"YOUR_REFRESH_TOKEN"}'
 ```
 
 ## 🎯 Current Status
 
 ### ✅ Completed
 
-- REST API with Express.js
-- JWT Authentication system
-- CRUD operations for cars
-- TypeScript setup with shared types
-- React + Vite frontend setup
-- TanStack Query integration
-- UI components with shadcn/ui
+#### Backend
+
+- REST API with Express.js and TypeScript
+- JWT Authentication with refresh tokens
+- CRUD operations for cars with pagination
+- Environment-based configuration (.env for dev, .env.production for prod)
+- bcryptjs password hashing
+- Data management with JSON files
+
+#### Frontend
+
+- React 19 + Vite setup
+- TanStack Query v5 with infinite scroll pagination
+- React Hook Form with Zod validation
+- React Router v7 for navigation
+- Zustand with persist for state management
+- Complete authentication system (login, logout, auto-refresh)
+- Dark mode with Tailwind CSS
+- Responsive design with shadcn/ui components
+- Infinite scroll for car listings
+- Complete CRUD interface for cars
+- Error boundaries and error handling
+- Custom hooks (useTheme, useInfiniteScroll)
+- Form validation with React Hook Form + Zod
 
 ### 🚧 Coming Soon
 
 - Socket.IO real-time updates
-- Client-side authentication
-- Car management UI
 - Real-time car updates across clients
+- WebSocket connection management
 
 ## 🛠️ Development
 
@@ -182,9 +237,11 @@ npm run dev
 ```
 PORT=3001
 NODE_ENV=development
-JWT_SECRET=your-super-secret-jwt-key-here
-CORS_ORIGIN=http://localhost:5173
+JWT_SECRET=your-super-secret-jwt-key-here-change-in-production
+JWT_REFRESH_SECRET=your-super-secret-refresh-key-here-change-in-production
 ```
+
+**Note**: For production, create `server/.env.production` with secure keys.
 
 ```
 cd ../client
