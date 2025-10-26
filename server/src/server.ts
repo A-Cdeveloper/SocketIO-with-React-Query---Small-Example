@@ -1,4 +1,11 @@
-import "dotenv/config";
+import { config } from "dotenv";
+import path from "path";
+
+// Load .env.development file
+const envPath = path.join(__dirname, "../../.env.development");
+console.log("Loading env from:", envPath);
+config({ path: envPath });
+
 import express from "express";
 import cors from "cors";
 import carsRouter from "./routes/cars";

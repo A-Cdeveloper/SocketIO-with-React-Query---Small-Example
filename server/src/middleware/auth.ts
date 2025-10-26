@@ -1,6 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { AuthUserType } from "../../../shared/types";
+import { config } from "dotenv";
+import path from "path";
+
+// Load env variables
+config({ path: path.join(__dirname, "../../../.env.development") });
 
 // Extend Express Request type to include user
 declare global {
@@ -11,8 +16,9 @@ declare global {
   }
 }
 
-const JWT_SECRET = process.env.JWT_SECRET || "";
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || JWT_SECRET + "";
+const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret-key";
+const JWT_REFRESH_SECRET =
+  process.env.JWT_REFRESH_SECRET || "fallback-refresh-secret-key";
 
 export const authenticateToken = (
   req: Request,
