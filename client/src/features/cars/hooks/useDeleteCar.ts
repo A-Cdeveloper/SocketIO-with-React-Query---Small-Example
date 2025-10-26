@@ -12,7 +12,7 @@ const useDeleteCar = () => {
     mutationFn: (id: number) => deleteCar(id),
     onSuccess: async () => {
       // Remove all cars queries to force fresh fetch
-      queryClient.removeQueries({ queryKey: ["cars"] });
+      queryClient.removeQueries({ queryKey: ["cars"], exact: false });
     },
   });
 
