@@ -1,11 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { AuthUserType } from "../../../shared/types";
-import { config } from "dotenv";
-import path from "path";
-
-// Load env variables
-config({ path: path.join(__dirname, "../../../.env.development") });
+import "dotenv/config";
 
 // Extend Express Request type to include user
 declare global {

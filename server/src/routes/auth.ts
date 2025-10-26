@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import { promises as fs } from "fs";
 import path from "path";
 import jwt from "jsonwebtoken";
+import "dotenv/config";
 import { UserType, LoginRequest, AuthResponse } from "../../../shared/types";
 import { generateToken, generateRefreshToken } from "../middleware/auth";
 
@@ -42,12 +43,12 @@ router.post("/login", async (req: Request, res: Response) => {
     const user = users.find((u) => u.email === email);
 
     if (!user) {
-      return res.status(401).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "User not found" });
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
-      return res.status(401).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "Invalid password" });
     }
 
     const { password: _, refreshToken: __, ...userWithoutPassword } = user;
@@ -85,9 +86,8 @@ router.post("/refresh", async (req: Request, res: Response) => {
     const users = await readUsers();
 
     // Verify refresh token
-    const JWT_SECRET = process.env.JWT_SECRET || "";
     const JWT_REFRESH_SECRET =
-      process.env.JWT_REFRESH_SECRET || JWT_SECRET + "";
+      process.env.JWT_REFRESH_SECRET || "fallback-refresh-secret-key";
 
     let decoded: any;
     try {

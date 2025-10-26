@@ -57,7 +57,7 @@
   },
   {
     "id": 9,
-    "car_name": "Sorento",
+    "car_name": "Sorento 450",
     "brand": "Kia",
     "price": 36865,
     "description": "Mid-size SUV with three-row seating and excellent value for money."
@@ -362,12 +362,5 @@
     "brand": "WV",
     "price": 2300,
     "description": "ecomomic car"
-  },
-  {
-    "id": 53,
-    "car_name": "UP",
-    "brand": "WV",
-    "price": 3400,
-    "description": "ecomomic car for family"
   }
 ]
