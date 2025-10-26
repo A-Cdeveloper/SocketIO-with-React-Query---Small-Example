@@ -11,6 +11,8 @@ import {
 } from "../schemas/car";
 import { useNavigate } from "react-router";
 import { useAddNewCar } from "../hooks/useAddNewCar";
+import { useEditCar } from "../hooks/useEditCar";
+import type { UpdateCarType } from "@shared/types";
 
 const CarFormular = ({ initialValues }: { initialValues?: AddCarForm }) => {
   const editMode = !!initialValues;
@@ -20,6 +22,11 @@ const CarFormular = ({ initialValues }: { initialValues?: AddCarForm }) => {
     isPending: isAddingCar,
     error: addingCarError,
   } = useAddNewCar();
+  const {
+    editCarMutation,
+    isPending: isEditingCar,
+    error: editingCarError,
+  } = useEditCar();
   const {
     register,
     handleSubmit,
@@ -34,7 +41,20 @@ const CarFormular = ({ initialValues }: { initialValues?: AddCarForm }) => {
     console.log(data);
 
     if (editMode) {
-      navigate(`/cars/${(data as EditCarForm).id}`);
+      editCarMutation(
+        {
+          id: (data as EditCarForm).id,
+          car: data as UpdateCarType,
+        },
+        {
+          onSuccess: () => {
+            navigate(`/cars/${(data as EditCarForm).id}`);
+          },
+          onError: (error) => {
+            console.error(error);
+          },
+        }
+      );
     } else {
       addNewCarMutation(data as AddCarForm, {
         onSuccess: () => {
@@ -93,12 +113,16 @@ const CarFormular = ({ initialValues }: { initialValues?: AddCarForm }) => {
           <div className="text-destructive">{addingCarError.message}</div>
         )}
 
+        {editingCarError && (
+          <div className="text-destructive">{editingCarError.message}</div>
+        )}
+
         <Button
           type="submit"
           disabled={isSubmitting}
           className="w-1/2 cursor-pointer my-4"
         >
-          {isSubmitting || isAddingCar
+          {isSubmitting || isAddingCar || isEditingCar
             ? "Processing..."
             : editMode
             ? "Edit Car"

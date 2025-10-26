@@ -1,4 +1,4 @@
-import type { CarsResponse, CarType } from "@shared/types";
+import type { CarsResponse, CarType, UpdateCarType } from "@shared/types";
 import { env } from "@/lib/env";
 import type { AddCarForm } from "../schemas/car";
 
@@ -23,6 +23,25 @@ export const getCarById = async (id: number): Promise<CarType> => {
 export const addNewCar = async (car: AddCarForm): Promise<CarType> => {
   const response = await fetch(`${env.VITE_REST_API_URL}/cars`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(car),
+  });
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error);
+  }
+  return data;
+};
+
+export const editCar = async (
+  id: number,
+  car: UpdateCarType
+): Promise<CarType> => {
+  const response = await fetch(`${env.VITE_REST_API_URL}/cars/${id}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
