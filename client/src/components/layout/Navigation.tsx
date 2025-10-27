@@ -6,13 +6,13 @@ const Navigation = () => {
   const { isAuthenticated } = useAuthStore();
 
   return (
-    <nav className="flex items-center space-x-4">
-      <LinkNav to={navigationRoutes.home.path}>
+    <nav className="flex items-center space-x-4" aria-label="Main navigation">
+      <LinkNav to={navigationRoutes.home.path} aria-label="Go to home page">
         {navigationRoutes.home.label}
       </LinkNav>
       {isAuthenticated && (
         <>
-          <LinkNav to={navigationRoutes.addCar.path}>
+          <LinkNav to={navigationRoutes.addCar.path} aria-label="Add new car">
             {navigationRoutes.addCar.label}
           </LinkNav>
         </>

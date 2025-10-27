@@ -11,12 +11,15 @@ const UserArea = () => {
     <div className="flex items-center space-x-4">
       {isAuthenticated ? (
         <>
-          <span className="text-sm text-gray-500">{user?.email}</span>
+          <span className="text-sm text-gray-500" aria-label="User email">
+            {user?.email}
+          </span>
           <Button
             className="bg-primary hover:bg-primary/90 cursor-pointer"
             onClick={() => logout()}
+            aria-label="Logout from your account"
           >
-            <LogOut className="mr-2 h-4 w-4" />
+            <LogOut className="mr-2 h-4 w-4" aria-hidden="true" />
             Logout
           </Button>
         </>
@@ -24,8 +27,9 @@ const UserArea = () => {
         <Button
           className="bg-primary hover:bg-primary/90 cursor-pointer"
           onClick={() => navigate("/login")}
+          aria-label="Login to your account"
         >
-          <LogIn className="mr-2 h-4 w-4" />
+          <LogIn className="mr-2 h-4 w-4" aria-hidden="true" />
           Login
         </Button>
       )}

@@ -20,7 +20,13 @@ const AllCars = () => {
     isFetchingNextPage
   );
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) {
+    return (
+      <div aria-label="Loading cars" role="status">
+        <Spinner />
+      </div>
+    );
+  }
   if (error) return <ErrorResults message={error.message} />;
   if (!cars || cars.length === 0)
     return <EmptyResults type="cars" message="Try again later" />;
@@ -33,17 +39,24 @@ const AllCars = () => {
           Browse our collection of premium vehicles
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        role="list"
+      >
         {cars.map((car) => (
           <CarListItem key={car.id} car={car} />
         ))}
       </div>
       {isFetchingNextPage && (
-        <div className="flex justify-center mt-8">
+        <div
+          className="flex justify-center mt-8"
+          aria-label="Loading more cars"
+          role="status"
+        >
           <Spinner />
         </div>
       )}
-      <div ref={loadMoreRef} aria-label="Load more cars" aria-hidden={true} />
+      <div ref={loadMoreRef} aria-hidden="true" />
     </>
   );
 };
