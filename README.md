@@ -11,13 +11,14 @@ A full-stack application demonstrating real-time communication using Socket.IO w
 - **React Hook Form** with Zod validation for forms
 - **Shared TypeScript types** between client and server
 - **Complete CRUD operations** for car management
+- **Socket.IO** for real-time bidirectional communication with automatic UI updates
 - **Dark mode** support with Tailwind CSS
-- **Responsive design** with modern UI components
-- **React Router** for client-side navigation
+- **Responsive design** with mobile burger menu
+- **React Router** with lazy loading for optimized performance
 - **Zustand** for state management with persistence
-- **Socket.IO** for real-time bidirectional communication
-- **Real-time updates** across all connected clients
-- **Error boundaries** for graceful error handling
+- **Vitest** + **React Testing Library** for comprehensive unit testing
+- **Performance optimization** with code splitting and tree shaking
+- **Accessibility (ARIA)** support for screen readers
 - **Custom hooks** for infinite scroll, theme management, and Socket.IO
 
 ## 📁 Project Structure
@@ -180,18 +181,22 @@ curl -X POST http://localhost:3001/api/auth/refresh \
 - React 19 + Vite setup
 - TanStack Query v5 with infinite scroll pagination
 - React Hook Form with Zod validation
-- React Router v7 for navigation
+- React Router v7 with lazy loading for performance
 - Zustand with persist for state management
 - Complete authentication system (login, logout, auto-refresh)
-- Dark mode with Tailwind CSS
-- Responsive design with shadcn/ui components
+- Dark mode with Tailwind CSS and next-themes
+- Responsive design with mobile burger menu
+- shadcn/ui modern component library
 - Infinite scroll for car listings
 - Complete CRUD interface for cars
 - Error boundaries and error handling
-- Custom hooks (useTheme, useInfiniteScroll, useSocket)
+- Custom hooks (useTheme, useInfiniteScroll, useSocket, useOutsideClick)
 - Form validation with React Hook Form + Zod
-- Socket.IO real-time updates across all connected clients
+- Socket.IO real-time updates with React Query cache invalidation
 - Auto-sync UI when cars are added, edited, or deleted via Socket.IO
+- **Unit testing** with Vitest and React Testing Library (28 tests)
+- **Performance optimization** with code splitting and tree shaking
+- **Accessibility (ARIA)** support for screen readers
 
 ## 🛠️ Development
 
@@ -209,7 +214,36 @@ npm start        # Start production server
 npm run dev      # Start development server
 npm run build    # Build for production
 npm run preview  # Preview production build
+npm run test     # Run unit tests
+npm run test:watch  # Run tests in watch mode
+npm run test:coverage  # Run tests with coverage report
+npm run lint     # Run ESLint
 ```
+
+## 🧪 Testing
+
+The project includes comprehensive unit tests using Vitest and React Testing Library.
+
+### Test Structure
+
+- **Hook tests**: `useTheme`, `useOutsideClick`, `useLogin`, `useCar`, `useEditCar`, `useDeleteCar`
+- **Component tests**: `EmptyResults`, `ErrorResults`, `CarListItem`, `AllCars`, `CarFormular`
+- **Utility tests**: `priceFormat`
+
+### Running Tests
+
+```
+cd client
+npm run test              # Run all tests
+npm run test:watch        # Watch mode
+npm run test:coverage     # Coverage report
+```
+
+### Test Coverage
+
+- 28 tests passing
+- All critical hooks and components tested
+- Mock setup for API calls and external dependencies
 
 ## 📝 License
 
