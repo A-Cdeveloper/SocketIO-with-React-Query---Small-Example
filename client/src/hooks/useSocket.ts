@@ -8,26 +8,14 @@ export const useSocket = () => {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    const socket: Socket = io(env.VITE_SOCKET_URL, {
-      transports: ["websocket"],
-    });
-
-    socket.on("connect", () => {
-      console.log("Connected to Socket.IO server");
-    });
-
-    socket.on("disconnect", () => {
-      console.log("Disconnected from Socket.IO server");
-    });
+    const socket: Socket = io(env.VITE_SOCKET_URL);
 
     const invalidateCarsCache = () => {
-      queryClient.removeQueries({ queryKey: ["cars"], exact: false });
-      queryClient.refetchQueries({ queryKey: ["cars"], type: "active" });
+      queryClient.invalidateQueries({ queryKey: ["cars"], exact: false });
     };
 
     const invalidateCarCache = (carId: number) => {
-      queryClient.removeQueries({ queryKey: ["car", carId] });
-      queryClient.refetchQueries({ queryKey: ["car", carId], type: "active" });
+      queryClient.invalidateQueries({ queryKey: ["car", carId] });
     };
 
     socket.on("car:deleted", (data: { id: number }) => {
