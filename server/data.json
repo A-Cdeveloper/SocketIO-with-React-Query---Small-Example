@@ -14,20 +14,6 @@
     "description": "Electric vehicle with cutting-edge technology and impressive range capabilities."
   },
   {
-    "id": 3,
-    "car_name": "Altima",
-    "brand": "Hyundai",
-    "price": 54167,
-    "description": "Reliable family car with excellent fuel efficiency and comfortable seating."
-  },
-  {
-    "id": 4,
-    "car_name": "Golf",
-    "brand": "Nissan",
-    "price": 60180,
-    "description": "Compact hatchback perfect for city driving with agile handling and modern features."
-  },
-  {
     "id": 5,
     "car_name": "Civic",
     "brand": "Nissan",

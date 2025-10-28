@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { priceFormat } from "@/lib/utils";
 import navigationRoutes from "@/providers/router/routes";
 import type { CarType } from "@shared/types";
@@ -26,4 +27,4 @@ const CarListItem = ({ car }: { car: CarType }) => {
   );
 };
 
-export default CarListItem;
+export default memo(CarListItem);

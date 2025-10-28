@@ -18,21 +18,31 @@ export const useSocket = () => {
       queryClient.invalidateQueries({ queryKey: ["car", carId] });
     };
 
-    socket.on("car:deleted", (data: { id: number }) => {
+    // Named handler functions
+    const handleCarDeleted = (data: { id: number }) => {
       invalidateCarsCache();
       invalidateCarCache(data.id);
-    });
+    };
 
-    socket.on("car:updated", (car: CarType) => {
+    const handleCarUpdated = (car: CarType) => {
       invalidateCarsCache();
       invalidateCarCache(car.id);
-    });
+    };
 
-    socket.on("car:added", () => {
+    const handleCarAdded = () => {
       invalidateCarsCache();
-    });
+    };
 
+    // Register event listeners
+    socket.on("car:deleted", handleCarDeleted);
+    socket.on("car:updated", handleCarUpdated);
+    socket.on("car:added", handleCarAdded);
+
+    // Cleanup: remove ALL listeners before disconnect
     return () => {
+      socket.off("car:deleted", handleCarDeleted);
+      socket.off("car:updated", handleCarUpdated);
+      socket.off("car:added", handleCarAdded);
       socket.disconnect();
     };
   }, [queryClient]);
