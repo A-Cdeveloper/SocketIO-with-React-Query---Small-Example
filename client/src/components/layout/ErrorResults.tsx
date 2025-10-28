@@ -10,12 +10,16 @@ const ErrorResults = ({ message }: ErrorResultsProps) => {
       className="flex flex-col items-center justify-center h-[80vh]"
       role="alert"
       aria-live="assertive"
+      data-testid="error-results"
     >
       <Ban
         className="h-12 w-12 text-destructive dark:text-destructive mb-4"
         aria-hidden="true"
+        data-testid="error-icon"
       />
-      <h3 className="text-lg font-semibold mb-2">{message}</h3>
+      <h3 className="text-lg font-semibold mb-2" data-testid="error-message">
+        {message}
+      </h3>
     </div>
   );
 };
