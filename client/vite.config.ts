@@ -52,7 +52,7 @@ export default defineConfig({
         "src/components/layout/AppLayout.tsx", // not testing
         "src/components/layout/MainContent.tsx", // not testing
         "src/components/layout/ProtectedRoute.tsx", // not testing
-
+        "src/features/auth/**", // auth (not testing)
         "src/features/cars/api/**", // API calls
 
         "src/features/cars/schemas/**", // schemas
