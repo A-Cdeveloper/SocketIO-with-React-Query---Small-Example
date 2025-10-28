@@ -1,7 +1,8 @@
 import { Outlet, useLocation } from "react-router";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import Header from "./Header";
 import MainContent from "./MainContent";
+import { Spinner } from "@/components/ui/spinner";
 
 const AppLayout = () => {
   const { pathname } = useLocation();
@@ -15,7 +16,9 @@ const AppLayout = () => {
       <Header />
 
       <MainContent>
-        <Outlet />
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
       </MainContent>
     </div>
   );

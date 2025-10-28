@@ -1,12 +1,15 @@
 import { createBrowserRouter } from "react-router";
-import HomePage from "@/pages/HomePage";
+import { lazy } from "react";
 import navigationRoutes from "./routes";
 import AppLayout from "@/components/layout/AppLayout";
-import SingleCarPage from "@/pages/SingleCarPage";
-import AddCarPage from "@/pages/AddCarPage";
-import EditCarPage from "@/pages/EditCarPage";
-import LoginPage from "@/pages/LoginPage";
 import ProtectedRoute from "@/components/layout/ProtectedRoute";
+
+// Lazy load all pages except critical ones
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const SingleCarPage = lazy(() => import("@/pages/SingleCarPage"));
+const AddCarPage = lazy(() => import("@/pages/AddCarPage"));
+const EditCarPage = lazy(() => import("@/pages/EditCarPage"));
+const LoginPage = lazy(() => import("@/pages/LoginPage"));
 
 export const router = createBrowserRouter([
   {

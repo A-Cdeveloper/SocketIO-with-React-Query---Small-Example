@@ -19,4 +19,27 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, "../shared"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Vendor chunks - rarely change, cache forever
+          "react-vendor": ["react", "react-dom", "react-router"],
+          "query-vendor": [
+            "@tanstack/react-query",
+            "@tanstack/react-query-devtools",
+          ],
+          "form-vendor": ["react-hook-form", "@hookform/resolvers", "zod"],
+          "ui-vendor": ["lucide-react", "sonner", "next-themes"],
+          "utils-vendor": [
+            "clsx",
+            "tailwind-merge",
+            "class-variance-authority",
+          ],
+          "socket-vendor": ["socket.io-client"],
+          "state-vendor": ["zustand"],
+        },
+      },
+    },
+  },
 });
