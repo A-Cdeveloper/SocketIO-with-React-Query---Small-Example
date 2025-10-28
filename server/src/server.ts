@@ -7,11 +7,20 @@ const envFile =
 config({ path: path.join(__dirname, `../../${envFile}`) });
 
 import express from "express";
+import { createServer } from "http";
+import { Server } from "socket.io";
 import cors from "cors";
 import carsRouter from "./routes/cars";
 import authRouter from "./routes/auth";
 
 const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "http://localhost:5173",
+  },
+});
+
 const PORT = process.env.PORT || 3001;
 
 // Middleware
@@ -40,8 +49,21 @@ app.use("*", (req: express.Request, res: express.Response) => {
   res.status(404).json({ error: "Route not found" });
 });
 
-app.listen(PORT, () => {
+// Export io instance for use in routes
+export { io };
+
+// Socket.IO connection handler
+io.on("connection", (socket) => {
+  console.log(`User connected: ${socket.id}`);
+
+  socket.on("disconnect", () => {
+    console.log(`User disconnected: ${socket.id}`);
+  });
+});
+
+httpServer.listen(PORT, () => {
   console.log(`🚗 Server running on http://localhost:${PORT}`);
   console.log(`🚙 Cars API: http://localhost:${PORT}/api/cars`);
   console.log(`🔐 Auth API: http://localhost:${PORT}/api/auth`);
+  console.log(`🔌 Socket.IO ready for connections`);
 });

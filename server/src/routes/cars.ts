@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { DataManager } from "../utils/dataManager";
 import { CreateCarType, UpdateCarType } from "../../../shared/types";
 import { authenticateToken } from "../middleware/auth";
+import { io } from "../server";
 
 const router = Router();
 
@@ -67,6 +68,10 @@ router.post("/", authenticateToken, async (req: Request, res: Response) => {
     }
 
     const newCar = await DataManager.createCar(carData);
+
+    // Emit Socket.IO event to all clients
+    io.emit("car:added", newCar);
+
     res.status(201).json(newCar);
   } catch (error) {
     console.error("Error creating car:", error);
@@ -88,6 +93,9 @@ router.put("/:id", authenticateToken, async (req: Request, res: Response) => {
     if (!updatedCar) {
       return res.status(404).json({ error: "Car not found" });
     }
+
+    // Emit Socket.IO event to all clients
+    io.emit("car:updated", updatedCar);
 
     res.json(updatedCar);
   } catch (error) {
@@ -111,6 +119,9 @@ router.delete(
       if (!deleted) {
         return res.status(404).json({ error: "Car not found" });
       }
+
+      // Emit Socket.IO event to all clients
+      io.emit("car:deleted", { id });
 
       res.status(204).send();
     } catch (error) {
