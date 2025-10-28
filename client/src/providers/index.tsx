@@ -1,15 +1,14 @@
 import AppRouter from "./router";
 import { TanstackQueryProvider } from "./tanstackquery";
-import { useSocket } from "@/hooks/useSocket";
+import SocketProvider from "./socket";
 
 const AppProviders = () => {
-  // Initialize Socket.IO connection
-  useSocket();
-
   return (
     <>
       <TanstackQueryProvider>
-        <AppRouter />
+        <SocketProvider>
+          <AppRouter />
+        </SocketProvider>
       </TanstackQueryProvider>
     </>
   );
