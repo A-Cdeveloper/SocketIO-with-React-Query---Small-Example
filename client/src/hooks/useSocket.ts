@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { io, Socket } from "socket.io-client";
 import { useQueryClient } from "@tanstack/react-query";
 import { env } from "@/lib/env";
+import type { CarType } from "@shared/types";
 
 export const useSocket = () => {
   const queryClient = useQueryClient();
@@ -19,19 +20,29 @@ export const useSocket = () => {
       console.log("Disconnected from Socket.IO server");
     });
 
-    // Listen for car:deleted event
-    socket.on("car:deleted", (data: { id: number }) => {
-      console.log("📥 Socket event: car:deleted", data);
-
-      // Remove all cars queries to force fresh fetch
+    const invalidateCarsCache = () => {
       queryClient.removeQueries({ queryKey: ["cars"], exact: false });
-      queryClient.removeQueries({ queryKey: ["car", data.id] });
-
-      // Refetch to update UI if component is mounted
       queryClient.refetchQueries({ queryKey: ["cars"], type: "active" });
+    };
+
+    const invalidateCarCache = (carId: number) => {
+      queryClient.removeQueries({ queryKey: ["car", carId] });
+      queryClient.refetchQueries({ queryKey: ["car", carId], type: "active" });
+    };
+
+    socket.on("car:deleted", (data: { id: number }) => {
+      invalidateCarsCache();
+      invalidateCarCache(data.id);
     });
 
-    // TODO: Add car:added and car:updated listeners
+    socket.on("car:updated", (car: CarType) => {
+      invalidateCarsCache();
+      invalidateCarCache(car.id);
+    });
+
+    socket.on("car:added", () => {
+      invalidateCarsCache();
+    });
 
     return () => {
       socket.disconnect();

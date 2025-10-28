@@ -48,7 +48,10 @@ const CarFormular = ({ initialValues }: { initialValues?: AddCarForm }) => {
         },
         {
           onSuccess: () => {
-            navigate(`/cars/${(data as EditCarForm).id}`);
+            // Wait a bit for Socket.IO event to be processed
+            setTimeout(() => {
+              navigate(`/cars/${(data as EditCarForm).id}`);
+            }, 100);
           },
           onError: (error) => {
             console.error(error);
