@@ -15,8 +15,10 @@ A full-stack application demonstrating real-time communication using Socket.IO w
 - **Responsive design** with modern UI components
 - **React Router** for client-side navigation
 - **Zustand** for state management with persistence
+- **Socket.IO** for real-time bidirectional communication
+- **Real-time updates** across all connected clients
 - **Error boundaries** for graceful error handling
-- **Custom hooks** for infinite scroll and theme management
+- **Custom hooks** for infinite scroll, theme management, and Socket.IO
 
 ## 📁 Project Structure
 
@@ -31,10 +33,10 @@ SocketIO-with-React-Query-Small-Example/
 │   │   ├── features/       # Feature-based architecture
 │   │   │   ├── auth/       # Authentication feature
 │   │   │   └── cars/       # Cars feature (CRUD)
-│   │   ├── hooks/          # Custom React hooks
+│   │   ├── hooks/          # Custom React hooks (useSocket, useTheme, etc.)
 │   │   ├── lib/            # Utilities (apiClient, env, utils)
 │   │   ├── pages/          # Page components
-│   │   ├── providers/      # React Query & Router setup
+│   │   ├── providers/      # React Query, Router, Socket setup
 │   │   └── store/          # Zustand state management
 │   └── package.json
 ├── server/                 # Node.js + Express backend
@@ -63,7 +65,7 @@ SocketIO-with-React-Query-Small-Example/
 - **JWT** authentication with refresh tokens
 - **bcryptjs** for password hashing
 - **dotenv** for environment variables (dev & prod support)
-- **Socket.IO** (coming soon)
+- **Socket.IO** for real-time WebSocket communication
 
 ### Frontend
 
@@ -78,6 +80,7 @@ SocketIO-with-React-Query-Small-Example/
 - **Lucide React** for icons
 - **next-themes** for theme switching
 - **Sonner** for toast notifications
+- **socket.io-client** for WebSocket client connection
 
 ## 🚀 Getting Started
 
@@ -118,9 +121,9 @@ Create `server/.env` file:
 
 ### Cars (Protected - requires JWT token)
 
-- `POST /api/cars` - Create new car
-- `PUT /api/cars/:id` - Update car
-- `DELETE /api/cars/:id` - Delete car
+- `POST /api/cars` - Create new car (emits `car:added` Socket.IO event)
+- `PUT /api/cars/:id` - Update car (emits `car:updated` Socket.IO event)
+- `DELETE /api/cars/:id` - Delete car (emits `car:deleted` Socket.IO event)
 
 ## 🔐 Authentication
 
@@ -185,14 +188,10 @@ curl -X POST http://localhost:3001/api/auth/refresh \
 - Infinite scroll for car listings
 - Complete CRUD interface for cars
 - Error boundaries and error handling
-- Custom hooks (useTheme, useInfiniteScroll)
+- Custom hooks (useTheme, useInfiniteScroll, useSocket)
 - Form validation with React Hook Form + Zod
-
-### 🚧 Coming Soon
-
-- Socket.IO real-time updates
-- Real-time car updates across clients
-- WebSocket connection management
+- Socket.IO real-time updates across all connected clients
+- Auto-sync UI when cars are added, edited, or deleted via Socket.IO
 
 ## 🛠️ Development
 
@@ -222,6 +221,18 @@ Feel free to submit issues and enhancement requests!
 
 ---
 
+## 🔌 Socket.IO Real-Time Events
+
+The application emits Socket.IO events for all CRUD operations:
+
+- **car:added** - Emitted when a new car is created
+- **car:updated** - Emitted when a car is updated
+- **car:deleted** - Emitted when a car is deleted
+
+All connected clients automatically receive these events and update their UI in real-time using React Query's cache invalidation and refetching mechanism.
+
+---
+
 **Note:** This is a small example project demonstrating Socket.IO integration with React Query. Perfect for learning real-time web development! 🚀
 
 ```
@@ -242,6 +253,13 @@ JWT_REFRESH_SECRET=your-super-secret-refresh-key-here-change-in-production
 ```
 
 **Note**: For production, create `server/.env.production` with secure keys.
+
+**Create** `**client/.env**` **file:**
+
+```
+VITE_REST_API_URL=http://localhost:3001/api
+VITE_SOCKET_URL=http://localhost:3001
+```
 
 ```
 cd ../client
